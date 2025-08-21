@@ -1,0 +1,222 @@
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    #backgroundWrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url("./wallpaper.png");
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      transition: transform 1s ease;
+    }
+
+    #backgroundWrapper.tilted {
+      transform: rotate(30deg) scale(1.5); /* optional scale to fill gaps */
+      transform-origin: center;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    #onboardingContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* center vertically initially */
+      transition: all 0.4s ease;
+    }
+
+    #onboardingContainer.started {
+      height: auto;
+      margin-top: 2rem;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+    }
+
+    h1, p {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    #game {
+      display: none;
+      grid-template-columns: repeat(4, 140px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .card {
+        width: 120px;
+        height: 120px;
+        padding: 10px;
+        background: linear-gradient(
+            135deg,          /* 135deg = diagonal from top-left to bottom-right */
+            black 70%,       /* black up to halfway */
+            #005249 30%      /* cyan from halfway to end */
+        );
+        border: 1px solid white;
+
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        transition: background 0.5s ease, background-color 0.5s ease, transform 0.2s ease;
+        color: white; /* ensure text is visible */
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      background-color: #ccc;
+    }
+
+    .card.flipped.correct {
+      background: none;
+      background-color: #03fce3;
+      color: black;
+    }
+
+    .card.flipped.incorrect {
+      background: none;
+      background-color: #f20051;
+      color: white;
+    }
+
+    #startBtn, #finishBtn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px;
+        background-color: white;
+        color: black;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #03fce3;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(3, 252, 227, 0.3), 0 0 15px rgba(3, 252, 227, 0.2);
+    }
+
+    #startBtn:hover, #finishBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
+    }
+
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    #penaltyOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 10;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        color: white;
+        font-weight: bold;
+    }
+
+    #playerForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #playerForm input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #03fce3;
+        border-radius: 8px;
+        background-color: black;
+        color: #03fce3;
+        width: 250px;
+        text-align: center;
+        transition: box-shadow 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 0 8px rgba(3, 252, 227, 0.4);
+    }
+
+    #playerForm input::placeholder {
+        color: white !important;
+    }
+
+    #playerForm input:focus::placeholder {
+        color: transparent !important !important;
+    }
+
+
+    #playerForm input:focus {
+        outline: none;
+        box-shadow: 0 0 15px rgba(3, 252, 227, 0.8);
+        transform: scale(1.03);
+    }
+
+    #playerForm input::placeholder {
+        color: #aaa;
+        font-style: italic;
+    }
+
+    #leaderboardBtn {
+    padding: 10px 24px;
+    font-size: 16px;
+    margin-top: 15px;
+    background-color: black;
+    color: #03fce3;
+    border: 1px solid #03fce3;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(3, 252, 227, 0.4), 0 0 20px rgba(3, 252, 227, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #leaderboardBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
+    }
+
+    #buttonRow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    #iconLeaderboardBtn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #03fce3;
+        color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(3, 252, 227, 0.3), 0 0 15px rgba(3, 252, 227, 0.2);
+    }
+
+    #iconLeaderboardBtn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(3, 252, 227, 0.6), 0 0 80px rgba(3, 252, 227, 0.3);
+    }
