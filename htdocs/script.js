@@ -139,7 +139,6 @@ function startGame() {
             score--;
         }
 
-        flipped[idx] = true;
         });
 
         gameDiv.appendChild(card);
