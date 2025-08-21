@@ -3,15 +3,9 @@ window.addEventListener("load", () => {
   const onboarding = document.getElementById("onboardingContainer");
 
   setTimeout(() => {
-    opening.style.display = "none";
-    onboarding.style.display = "block";
-
-    setTimeout(() => {
-      onboarding.style.opacity = "1";
-    }, 50);
-
+    onboarding.style.opacity = "1";
     document.body.style.overflow = "auto"; 
-  }, 4000); 
+  }, 4500); 
 });
 
 
