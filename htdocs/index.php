@@ -10,6 +10,7 @@
 
   <div id="onboardingContainer">
     <h1><u>Un</u>Mask Cheer</h1>
+    <b> Programmed with ♡ by 3G 2025 BPGHS.</b>
     <p>Flip all cards that you think show toxic positivity traits</p>
     <form id="playerForm">
         <input type="text" id="playerName" placeholder="Enter your name" required><br>
