@@ -1,53 +1,70 @@
-   const traits = [
-      { text: "Just be happy!", toxic: true },
-      { text: "It could be worse.", toxic: true },
-      { text: "Just work a little harder.", toxic: true },
-      { text: "Don't be so negative.", toxic: true },
-      { text: "You’re strong enough to handle this", toxic: true },
-      { text: "Don’t worry, be happy.", toxic: true },
-      { text: "Good vibes only.", toxic: true },
-      { text: "Everything happens for a reason.", toxic: true },
-      { text: "That must be hard.", toxic: false },
-      { text: "I’m here for you.", toxic: false },
-      { text: "It’s okay to feel that way.", toxic: false },
-      { text: "Take your time to heal.", toxic: false },
-      { text: "You're not alone.", toxic: false },
-      { text: "Tell me more.", toxic: false },
-      { text: "I understand this hurts.", toxic: false },
-      { text: "I'm listening.", toxic: false },
-      { text: "It's not a big deal.", toxic: true},
-      { text: "It'll eventually end.", toxic: true},
-      { text: "Take your time.", toxic: false},
-      { text: "Look at the bright side.", toxic: true},
-      { text: "Take this as a test in life.", toxic: true},
-      { text: "Stop crying.", toxic: true},
-      { text: "You can learn from this.", toxic: false},
-      { text: "Stop thinking about it.", toxic: true},
-      { text: "Maybe it was meant to be.", toxic: true},
-      { text: "Think about happy times.", toxic: true},
-      { text: "I believe in you.", toxic: false},
-      { text: "I will always be with you.", toxic: false},
-      { text: "You can achieve anything with effort.", toxic: true},
-      { text: "There are people who have it worse.", toxic: true},
-      { text: "It's ok to be sad.", toxic: false},
-     { text: "What doesn't kill make you stronger.", toxic: true},
-     { text: "I understand how you're feeling", toxic: false},
-     { text: "Be strong!", toxic: true},
-     { text: "Be grateful for what you have.", toxic: true},
-     { text: "It'll all make sense eventually", toxic: true},
-     { text: "Stand strong against adversity!", toxic: true},
-     { text: "We will be cheering you on!", toxic: false},
-     { text: "Don't show weakness.", toxic: true},
-     { text: "It's ok to rely on others.", toxic: false},
-     { text: "Don't overthink it.", toxic: true},
-     { text: "I hope you succeed", toxic: false},
-     { text: "You'll be fine.", toxic: true},
-     { text: "Happiness is a choice.", toxic: true},
-     { text: "It's ok to think about it.", toxic: false},
-     { text: "It must be difficult for you.", toxic: false},
-     { text: "Tt is just a phase you are going through.", toxic: true},
-     { text: "I'm here if you need me.", toxic: false},
-    ];
+window.addEventListener("load", () => {
+  const opening = document.getElementById("openingScreen");
+  const onboarding = document.getElementById("onboardingContainer");
+
+  setTimeout(() => {
+    opening.style.display = "none";
+    onboarding.style.display = "block";
+
+    setTimeout(() => {
+      onboarding.style.opacity = "1";
+    }, 50);
+
+    document.body.style.overflow = "auto"; 
+  }, 4000); 
+});
+
+
+const traits = [
+    { text: "Just be happy!", toxic: true },
+    { text: "It could be worse.", toxic: true },
+    { text: "Just work a little harder.", toxic: true },
+    { text: "Don't be so negative.", toxic: true },
+    { text: "You’re strong enough to handle this", toxic: true },
+    { text: "Don’t worry, be happy.", toxic: true },
+    { text: "Good vibes only.", toxic: true },
+    { text: "Everything happens for a reason.", toxic: true },
+    { text: "That must be hard.", toxic: false },
+    { text: "I’m here for you.", toxic: false },
+    { text: "It’s okay to feel that way.", toxic: false },
+    { text: "Take your time to heal.", toxic: false },
+    { text: "You're not alone.", toxic: false },
+    { text: "Tell me more.", toxic: false },
+    { text: "I understand this hurts.", toxic: false },
+    { text: "I'm listening.", toxic: false },
+    { text: "It's not a big deal.", toxic: true},
+    { text: "It'll eventually end.", toxic: true},
+    { text: "Take your time.", toxic: false},
+    { text: "Look at the bright side.", toxic: true},
+    { text: "Take this as a test in life.", toxic: true},
+    { text: "Stop crying.", toxic: true},
+    { text: "You can learn from this.", toxic: false},
+    { text: "Stop thinking about it.", toxic: true},
+    { text: "Maybe it was meant to be.", toxic: true},
+    { text: "Think about happy times.", toxic: true},
+    { text: "I believe in you.", toxic: false},
+    { text: "I will always be with you.", toxic: false},
+    { text: "You can achieve anything with effort.", toxic: true},
+    { text: "There are people who have it worse.", toxic: true},
+    { text: "It's ok to be sad.", toxic: false},
+    { text: "What doesn't kill make you stronger.", toxic: true},
+    { text: "I understand how you're feeling", toxic: false},
+    { text: "Be strong!", toxic: true},
+    { text: "Be grateful for what you have.", toxic: true},
+    { text: "It'll all make sense eventually", toxic: true},
+    { text: "Stand strong against adversity!", toxic: true},
+    { text: "We will be cheering you on!", toxic: false},
+    { text: "Don't show weakness.", toxic: true},
+    { text: "It's ok to rely on others.", toxic: false},
+    { text: "Don't overthink it.", toxic: true},
+    { text: "I hope you succeed", toxic: false},
+    { text: "You'll be fine.", toxic: true},
+    { text: "Happiness is a choice.", toxic: true},
+    { text: "It's ok to think about it.", toxic: false},
+    { text: "It must be difficult for you.", toxic: false},
+    { text: "Tt is just a phase you are going through.", toxic: true},
+    { text: "I'm here if you need me.", toxic: false},
+];
 
 let score = 0;
 let startTime = 0;
