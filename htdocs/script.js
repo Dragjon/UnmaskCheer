@@ -20,13 +20,13 @@ const traits = [
     { text: "It could be worse.", toxic: true },
     { text: "Just work a little harder.", toxic: true },
     { text: "Don't be so negative.", toxic: true },
-    { text: "You’re strong enough to handle this", toxic: true },
-    { text: "Don’t worry, be happy.", toxic: true },
+    { text: "You're strong enough to handle this", toxic: true },
+    { text: "Don't worry, be happy.", toxic: true },
     { text: "Good vibes only.", toxic: true },
     { text: "Everything happens for a reason.", toxic: true },
     { text: "That must be hard.", toxic: false },
-    { text: "I’m here for you.", toxic: false },
-    { text: "It’s okay to feel that way.", toxic: false },
+    { text: "I'm here for you.", toxic: false },
+    { text: "It's okay to feel that way.", toxic: false },
     { text: "Take your time to heal.", toxic: false },
     { text: "You're not alone.", toxic: false },
     { text: "Tell me more.", toxic: false },
@@ -62,7 +62,7 @@ const traits = [
     { text: "Happiness is a choice.", toxic: true},
     { text: "It's ok to think about it.", toxic: false},
     { text: "It must be difficult for you.", toxic: false},
-    { text: "Tt is just a phase you are going through.", toxic: true},
+    { text: "It is just a phase you are going through.", toxic: true},
     { text: "I'm here if you need me.", toxic: false},
 ];
 
@@ -163,9 +163,8 @@ function startGame() {
 
     gameDiv.style.display = "grid";
     document.getElementById("finishBtn").style.display = "inline-block";
-    document.getElementById("startBtn").style.display = "none";
-    document.getElementById("playerForm").style.display = "none";
-    document.getElementById("iconLeaderboardBtn").style.display = "none";
+    document.getElementById("onboardingContainer").style.display = "none";
+
     onboarding.classList.add("started");
     background.classList.add("tilted");
 

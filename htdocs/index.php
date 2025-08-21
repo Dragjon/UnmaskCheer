@@ -30,9 +30,11 @@
     </div>
   </div>
 
-  <div id="game"></div>
-  <button id="finishBtn" style="display:none">Finish</button>
-  <div id="result"></div>
+  <div id="gameContainer">
+    <div id="game"></div>
+    <button id="finishBtn" style="display:none">Finish</button>
+    <div id="result"></div>
+  </div>
 
   <div id="penaltyOverlay">
     <span id="countdown">3</span>

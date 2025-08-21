@@ -101,13 +101,28 @@ h1, p {
   text-align: center;
 }
 
+#gameContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column; /* so grid and buttons stack */
+  align-items: center;
+  justify-content: center;
+  z-index: 10; /* make sure it sits above background */
+}
+
+/* Game grid stays as grid only */
 #game {
   display: none;
   grid-template-columns: repeat(4, 140px);
   grid-gap: 10px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
+
 
 .card {
     width: 120px;
@@ -147,7 +162,7 @@ h1, p {
   color: white;
 }
 
-#startBtn, #finishBtn {
+#startBtn {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -158,6 +173,22 @@ h1, p {
     border: 1px solid #03fce3;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(3, 252, 227, 0.3), 0 0 15px rgba(3, 252, 227, 0.2);
+}
+
+#finishBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px auto; /* auto centers inline-block/flex children */
+  background-color: black;
+  color: #03fce3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid #03fce3;
+  border-radius: 10px;
+  display: block;           /* allow margin auto centering */
+  text-align: center;
+  box-shadow: 0 0 10px rgba(3, 252, 227, 0.3),
+              0 0 15px rgba(3, 252, 227, 0.2);
 }
 
 #startBtn:hover, #finishBtn:hover {
