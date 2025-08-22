@@ -35,6 +35,21 @@ html, body {
   position: relative;
 }
 
+
+#openingScreen p {
+  margin-left: 10px;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: #e6e6e6; 
+  text-align: center;
+  opacity: 0;
+  animation: fadeInText 2.5s ease forwards; 
+  text-shadow: 0 0 10px rgba(230,230,230,0.7),
+               0 0 20px rgba(230,230,230,0.5);
+  z-index: 2; 
+  position: relative;
+  margin-top: 1rem; 
+}
+
 /* Bubble styling */
 #openingScreen .bubble {
   position: absolute;

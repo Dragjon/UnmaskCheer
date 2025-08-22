@@ -14,6 +14,7 @@
   <!-- Opening transitions -->
   <div id="openingScreen">
     <h1><span class="highlight"><u>Un</u>Mask Cheer</span></h1>
+    <p>v1.0.0</p>
     <div class="bubble"></div>
     <div class="bubble"></div>
     <div class="bubble"></div>
