@@ -30,3 +30,5 @@ Before doing this, make sure the github clone is updated
     $pass = "";
     ````
 11) Check it out and test it at http://localhost/UnmaskCheer/htdocs/index.php
+# Credits and Sources
+[CONTRIBUTORS.md](https://github.com/Dragjon/UnmaskCheer/CONTRIBUTORS.md)
