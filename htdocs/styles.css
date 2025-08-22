@@ -4,6 +4,7 @@ html, body {
   height: 100%;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+  color: white;
 }
 
 /* Opening screen stays on top */
@@ -24,12 +25,12 @@ html, body {
 /* Text fade-in stays as is */
 #openingScreen h1 {
   font-size: clamp(2rem, 8vw, 4rem);
-  color: #03fce3;
+  color: #b388ff; /* neon purple */
   text-align: center;
   opacity: 0;
   animation: fadeInText 2s ease forwards;
-  text-shadow: 0 0 20px rgba(3, 252, 227, 0.9),
-               0 0 40px rgba(3, 252, 227, 0.6);
+  text-shadow: 0 0 20px rgba(179,136,255,0.9),
+               0 0 40px rgba(179,136,255,0.6);
   z-index: 2; /* keep text above bubbles */
   position: relative;
 }
@@ -40,7 +41,7 @@ html, body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(3,252,227,0.5) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(179,136,255,0.5) 0%, transparent 70%);
   animation: bubbleExpand 4s ease-out forwards;
   opacity: 0;
   z-index: 1; /* behind text */
@@ -69,32 +70,18 @@ html, body {
   100% { transform: scale(15); opacity: 0; }
 }
 
-/* Fade animations */
-@keyframes fadeInText {
-  from { opacity: 0; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
-
 #backgroundWrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("./wallpaper.png");
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url("./wallpaper.png");
   background-size: cover;
   background-position: center;
   z-index: -1;
   transition: transform 1s ease;
-}
-
-#backgroundWrapper.tilted {
-  transform: rotate(30deg) scale(1.5); /* optional scale to fill gaps */
-  transform-origin: center;
 }
 
 body {
@@ -115,7 +102,6 @@ body {
   text-align: center;
   padding: 20px;
   max-width: 90%; 
-  width: 100%;
   width: 80%;
   opacity: 0;
   transition: opacity 1s ease;
@@ -125,8 +111,9 @@ body {
 /* Headings */
 #onboardingContainer h1 {
   font-size: clamp(24px, 6vw, 48px); /* responsive size */
+  color: #b388ff;
+  text-shadow: 0 0 10px rgba(179,136,255,0.8);
 }
-
 
 #onboardingContainer.started {
   height: auto;
@@ -161,14 +148,15 @@ h1, p {
   margin-bottom: clamp(15px, 5vw, 30px);
 }
 
+/* Card design */
 .card {
-  width: clamp(60px, 18vw, 120px);   /* bigger minimum, scales moderately */
+  width: clamp(60px, 18vw, 120px);
   height: clamp(60px, 18vw, 120px);
-  padding: clamp(6px, 1.5vw, 10px);  /* padding scales but stays visible */
+  padding: clamp(6px, 1.5vw, 10px);
   background: linear-gradient(
       135deg,
       black 70%,
-      #005249 30%
+      #3a005f 30%
   );
   border: 1px solid white;
   border-radius: 8px;
@@ -177,162 +165,162 @@ h1, p {
   justify-content: center;
   cursor: pointer;
   user-select: none;
-  transition: background 0.5s ease, background-color 0.5s ease, transform 0.2s ease;
+  transition: background 0.5s ease, transform 0.2s ease;
   color: white;
 }
 
 .card:hover {
   transform: scale(1.03);
-  background-color: #ccc;
+  background-color: #2d004d;
 }
 
 .card.flipped.correct {
   background: none;
-  background-color: #03fce3;
+  background-color: #b388ff;
   color: black;
 }
 
 .card.flipped.incorrect {
   background: none;
-  background-color: #f20051;
+  background-color: #f200ff;
   color: white;
 }
 
+/* Start button */
 #startBtn {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 10px;
-    background-color: white;
-    color: black;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #03fce3;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(3, 252, 227, 0.3), 0 0 15px rgba(3, 252, 227, 0.2);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  background-color: white;
+  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #b388ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(179,136,255,0.3), 0 0 15px rgba(179,136,255,0.2);
 }
 
 #finishBtn {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  margin: 10px auto; /* auto centers inline-block/flex children */
+  margin: 10px auto;
   background-color: black;
-  color: #03fce3;
+  color: #b388ff;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  border: 1px solid #03fce3;
+  border: 1px solid #b388ff;
   border-radius: 10px;
-  display: block;           /* allow margin auto centering */
+  display: block;
   text-align: center;
-  box-shadow: 0 0 10px rgba(3, 252, 227, 0.3),
-              0 0 15px rgba(3, 252, 227, 0.2);
+  box-shadow: 0 0 10px rgba(179,136,255,0.3),
+              0 0 15px rgba(179,136,255,0.2);
 }
 
 #startBtn:hover, #finishBtn:hover {
-transform: scale(1.05);
-box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(179,136,255,0.7), 0 0 80px rgba(179,136,255,0.4);
 }
-
 
 #result {
   margin-top: 20px;
   font-size: 18px;
 }
 
+/* Overlay penalty */
 #penaltyOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 10;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    color: white;
-    font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
 }
 
+/* Player form */
 #playerForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 #playerForm input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #03fce3;
-    border-radius: 8px;
-    background-color: black;
-    color: #03fce3;
-    width: 100%;
-    max-width: 320px; /* prevent super wide on desktop */
-    text-align: center;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 0 8px rgba(3, 252, 227, 0.4);
+  padding: 10px;
+  font-size: 16px;
+  border-left: 2px solid #b388ff;
+  border-bottom: 2px solid #b388ff;
+  border-radius: 8px;
+  background-color: white;
+  color: rgb(43, 0, 49);
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 8px rgba(179,136,255,0.4);
 }
 
 #playerForm input::placeholder {
-    color: white !important;
+  font-style: italic;
+  color: rgb(124, 124, 124) !important;
 }
 
 #playerForm input:focus::placeholder {
-    color: transparent !important !important;
+  color: transparent !important;
 }
-
 
 #playerForm input:focus {
-    outline: none;
-    box-shadow: 0 0 15px rgba(3, 252, 227, 0.8);
-    transform: scale(1.03);
+  outline: none;
+  box-shadow: 0 0 15px rgba(179,136,255,0.8);
+  transform: scale(1.03);
+  color: #ff00d4;
 }
 
-#playerForm input::placeholder {
-    color: #aaa;
-    font-style: italic;
-}
-
+/* Leaderboard buttons */
 #leaderboardBtn {
   padding: 10px 24px;
   font-size: 16px;
   margin-top: 15px;
   background-color: black;
-  color: #03fce3;
-  border: 1px solid #03fce3;
+  color: #b388ff;
+  border: 1px solid #b388ff;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(3, 252, 227, 0.4), 0 0 20px rgba(3, 252, 227, 0.2);
+  box-shadow: 0 0 10px rgba(179,136,255,0.4), 0 0 20px rgba(179,136,255,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #leaderboardBtn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
+  box-shadow: 0 0 40px rgba(179,136,255,0.7), 0 0 80px rgba(179,136,255,0.4);
 }
 
 #buttonRow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 #iconLeaderboardBtn {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #03fce3;
-    color: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(3, 252, 227, 0.3), 0 0 15px rgba(3, 252, 227, 0.2);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #b388ff;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(179,136,255,0.3), 0 0 15px rgba(179,136,255,0.2);
 }
 
 #iconLeaderboardBtn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(3, 252, 227, 0.6), 0 0 80px rgba(3, 252, 227, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(179,136,255,0.6), 0 0 80px rgba(179,136,255,0.3);
 }

@@ -1,13 +1,13 @@
 window.addEventListener("load", () => {
-  const opening = document.getElementById("openingScreen");
-  const onboarding = document.getElementById("onboardingContainer");
 
-  setTimeout(() => {
+    const opening = document.getElementById("openingScreen");
+    const onboarding = document.getElementById("onboardingContainer");
+
+    setTimeout(() => {
     onboarding.style.opacity = "1";
     document.body.style.overflow = "auto"; 
-  }, 4500); 
+    }, 4500); 
 });
-
 
 const traits = [
     { text: "Just be happy!", toxic: true },
@@ -160,7 +160,6 @@ function startGame() {
     document.getElementById("onboardingContainer").style.display = "none";
 
     onboarding.classList.add("started");
-    background.classList.add("tilted");
 
     startTime = Date.now();
     }
