@@ -7,7 +7,7 @@ Before doing this, make sure the github clone is updated
 3) Extract zip and add the folder to PATH
 4) Download and run the XAMPP installer https://sourceforge.net/projects/xampp/
 5) Choose all default options in installer (installing should be ~5-10min)
-6) Run XAMPP and start mysql in XAMPP
+6) Run XAMPP and start mysql and apache in XAMPP
 7) Copy the UnmaskCheer folder into the htdocs at C:\xampp\htdocs
 8) Test out whether it works http://localhost/UnmaskCheer/htdocs/index.php
 9) In the phpMyAdmin, create a database named "leaderboard_db" at http://localhost/phpmyadmin/index.php?route=/server/databases
