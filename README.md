@@ -31,6 +31,6 @@ Before doing this, make sure the github clone is updated
     ````
 11) Check it out and test it at http://localhost/UnmaskCheer/htdocs/index.php
 # License
-MIT License. See [LICENSE](https://github.com/Dragjon/UnmaskCheer/LICENSE)
+MIT License. See [LICENSE](https://github.com/Dragjon/UnmaskCheer/blob/main/LICENSE)
 # Credits and sources
-List of credits. See [CONTRIBUTORS.md](https://github.com/Dragjon/UnmaskCheer/CONTRIBUTORS.md)
+List of credits. See [CONTRIBUTORS.md](https://github.com/Dragjon/UnmaskCheer/blob/main/CONTRIBUTORS.md)
