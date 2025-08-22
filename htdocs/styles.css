@@ -6,7 +6,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Opening Screen */
+/* Opening screen stays on top */
 #openingScreen {
   position: fixed;
   top: 0; left: 0;
@@ -16,18 +16,57 @@ html, body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow: hidden; /* ensures bubbles don't scroll */
   animation: fadeOut 3s ease forwards;
   animation-delay: 2.5s;
 }
 
+/* Text fade-in stays as is */
 #openingScreen h1 {
-  font-size: clamp(2rem, 8vw, 4rem); /* some magic scaling, ie min = 1.8rem, scales with viewport width (8vw), max = 4rem */
+  font-size: clamp(2rem, 8vw, 4rem);
   color: #03fce3;
   text-align: center;
   opacity: 0;
   animation: fadeInText 2s ease forwards;
   text-shadow: 0 0 20px rgba(3, 252, 227, 0.9),
                0 0 40px rgba(3, 252, 227, 0.6);
+  z-index: 2; /* keep text above bubbles */
+  position: relative;
+}
+
+/* Bubble styling */
+#openingScreen .bubble {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(3,252,227,0.5) 0%, transparent 70%);
+  animation: bubbleExpand 4s ease-out forwards;
+  opacity: 0;
+  z-index: 1; /* behind text */
+}
+
+/* Different bubble spawn positions */
+#openingScreen .bubble:nth-child(2) { top: 20%; left: 30%; animation-delay: 0.2s; }
+#openingScreen .bubble:nth-child(3) { top: 60%; left: 70%; animation-delay: 0.5s; }
+#openingScreen .bubble:nth-child(4) { top: 40%; left: 50%; animation-delay: 0.8s; }
+#openingScreen .bubble:nth-child(5) { top: 75%; left: 25%; animation-delay: 1.1s; }
+#openingScreen .bubble:nth-child(6) { top: 10%; left: 80%; animation-delay: 1.4s; }
+
+/* Animations */
+@keyframes fadeInText {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes bubbleExpand {
+  0% { transform: scale(0); opacity: 0.9; }
+  60% { transform: scale(8); opacity: 0.4; }
+  100% { transform: scale(15); opacity: 0; }
 }
 
 /* Fade animations */
