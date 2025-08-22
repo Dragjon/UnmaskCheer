@@ -21,15 +21,7 @@ html, body {
 }
 
 #openingScreen h1 {
-  font-size: 4rem;
-  color: white;
-  text-align: center;
-  opacity: 0;
-  animation: fadeInText 2s ease forwards;
-}
-
-#openingScreen h1 {
-  font-size: 4rem;
+  font-size: clamp(2rem, 8vw, 4rem); /* some magic scaling, ie min = 1.8rem, scales with viewport width (8vw), max = 4rem */
   color: #03fce3;
   text-align: center;
   opacity: 0;
@@ -82,12 +74,20 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1;
   text-align: center;
-  padding: 30px;
-  max-width: 600px;
+  padding: 20px;
+  max-width: 90%; 
+  width: 100%;
   width: 80%;
   opacity: 0;
   transition: opacity 1s ease;
+  font-size: clamp(14px, 2.5vw, 18px); /* screen scaling ig */
 }
+
+/* Headings */
+#onboardingContainer h1 {
+  font-size: clamp(24px, 6vw, 48px); /* responsive size */
+}
+
 
 #onboardingContainer.started {
   height: auto;
@@ -232,7 +232,8 @@ box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
     border-radius: 8px;
     background-color: black;
     color: #03fce3;
-    width: 250px;
+    width: 100%;
+    max-width: 320px; /* prevent super wide on desktop */
     text-align: center;
     transition: box-shadow 0.3s ease, transform 0.2s ease;
     box-shadow: 0 0 8px rgba(3, 252, 227, 0.4);
@@ -259,21 +260,21 @@ box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
 }
 
 #leaderboardBtn {
-padding: 10px 24px;
-font-size: 16px;
-margin-top: 15px;
-background-color: black;
-color: #03fce3;
-border: 1px solid #03fce3;
-border-radius: 10px;
-cursor: pointer;
-box-shadow: 0 0 10px rgba(3, 252, 227, 0.4), 0 0 20px rgba(3, 252, 227, 0.2);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px 24px;
+  font-size: 16px;
+  margin-top: 15px;
+  background-color: black;
+  color: #03fce3;
+  border: 1px solid #03fce3;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(3, 252, 227, 0.4), 0 0 20px rgba(3, 252, 227, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #leaderboardBtn:hover {
-transform: scale(1.05);
-box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
 }
 
 #buttonRow {
@@ -298,4 +299,18 @@ box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
 #iconLeaderboardBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 40px rgba(3, 252, 227, 0.6), 0 0 80px rgba(3, 252, 227, 0.3);
+}
+
+/*
+Some phone css :)
+*/
+@media (max-width: 600px) {
+  #game {
+    grid-template-columns: repeat(2, 100px); /* smaller grid */
+  }
+
+  .card {
+    width: 90px;
+    height: 90px;
+  }
 }
