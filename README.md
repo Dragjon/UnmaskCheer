@@ -1,7 +1,9 @@
 # Unmask The Cheer (Project Description)
 UNmaskCheer is a project by class 3G 2025 of BPGHs to promote mental wellbeing through the teaching of a phenomenon known as "toxic positivity", where overly-positive feedback/advice/mindset in the wrong context could lead to one feeling much worse. These types of mindsets are known as toxic-positive mindsets, and they neglect one's true feelings. Toxic positivity in daily life usually arises from several common factors like peer pressure, pressure to meet expectations, or fear of judgement. We, as a class, feel strongly to advocate against such a mentality on life and have come up with a game to teach our fellow students to spot symptoms and signs of toxic positivity. We hope this short and simple online game can help foster a more comforting and accepting school environment.
-# How to use
-Before doing this, make sure the github clone is updated
+# How to use (locally on windows)
+> [!NOTE]
+> If you just want to play the game, go to the [website](https://unmaskcheer.free.nf) instead.
+
 1) Clone the github repo `git clone https://github.com/Dragjon/UnmaskCheer.git`
 2) Download vs17 x64 php from https://www.php.net/downloads.php non-thread-safe version
 3) Extract zip and add the folder to PATH
