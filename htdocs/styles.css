@@ -113,36 +113,33 @@ h1, p {
   z-index: 10; /* make sure it sits above background */
 }
 
-/* Game grid stays as grid only */
 #game {
-  display: none;
-  grid-template-columns: repeat(4, 140px);
-  grid-gap: 10px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* always 4 columns */
+  gap: clamp(8px, 3vw, 15px);           /* slightly larger gaps */
+  justify-items: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: clamp(15px, 5vw, 30px);
 }
 
-
 .card {
-    width: 120px;
-    height: 120px;
-    padding: 10px;
-    background: linear-gradient(
-        135deg,          /* 135deg = diagonal from top-left to bottom-right */
-        black 70%,       /* black up to halfway */
-        #005249 30%      /* cyan from halfway to end */
-    );
-    border: 1px solid white;
-
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.5s ease, background-color 0.5s ease, transform 0.2s ease;
-    color: white; /* ensure text is visible */
+  width: clamp(60px, 18vw, 120px);   /* bigger minimum, scales moderately */
+  height: clamp(60px, 18vw, 120px);
+  padding: clamp(6px, 1.5vw, 10px);  /* padding scales but stays visible */
+  background: linear-gradient(
+      135deg,
+      black 70%,
+      #005249 30%
+  );
+  border: 1px solid white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.5s ease, background-color 0.5s ease, transform 0.2s ease;
+  color: white;
 }
 
 .card:hover {
@@ -299,18 +296,4 @@ box-shadow: 0 0 40px rgba(3, 252, 227, 0.7), 0 0 80px rgba(3, 252, 227, 0.4);
 #iconLeaderboardBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 40px rgba(3, 252, 227, 0.6), 0 0 80px rgba(3, 252, 227, 0.3);
-}
-
-/*
-Some phone css :)
-*/
-@media (max-width: 600px) {
-  #game {
-    grid-template-columns: repeat(2, 100px); /* smaller grid */
-  }
-
-  .card {
-    width: 90px;
-    height: 90px;
-  }
 }
